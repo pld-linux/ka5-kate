@@ -1,16 +1,16 @@
-%define		kdeappsver	17.08.2
+%define		kdeappsver	18.04.0
 %define		qtver		5.3.2
 %define		kaname		kate
 
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	17.08.2
+Version:	18.04.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	286a26b8c83202d102ba87cdece56037
+# Source0-md5:	88e8a13db2f44f982f4157c02af58d8b
 URL:		http://www.kde.org/
 BuildRequires:	shared-mime-info
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -123,6 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/ktexteditor/ktexteditor_lumen.so
 %{_libdir}/qt5/plugins/ktexteditor/tabswitcherplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/textfilterplugin.so
+%{_libdir}/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
 %{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_katesessions.so
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
@@ -140,7 +141,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/64x64/apps/kwrite.png
 %{_iconsdir}/hicolor/scalable/apps/kate.svgz
 %{_iconsdir}/hicolor/scalable/apps/kwrite.svgz
+%dir %{_datadir}/kateproject
 %{_datadir}/kateproject/kateproject.example
+%dir %{_datadir}/katexmltools
 %{_datadir}/katexmltools/html4-loose.dtd.xml
 %{_datadir}/katexmltools/html4-strict.dtd.xml
 %{_datadir}/katexmltools/kcfg.dtd.xml
@@ -168,6 +171,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
 %{_datadir}/metainfo/org.kde.kwrite.appdata.xml
 %{_datadir}/metainfo/org.kde.plasma.katesessions.appdata.xml
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents
+%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui
 %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/KateSessionsItemDelegate.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/Menu.qml
 %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/katesessions.qml
