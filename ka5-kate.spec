@@ -1,17 +1,38 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		kate
 
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	88e8a13db2f44f982f4157c02af58d8b
+# Source0-md5:	79e3b0ad727c17e93274f4003411199b
 URL:		http://www.kde.org/
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5DBus-devel
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Sql-devel
+BuildRequires:	Qt5Test-devel >= 5.4.0
+BuildRequires:	Qt5Widgets-devel
+BuildRequires:	gettext-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kconfig-devel >= 5.40.0
+BuildRequires:	kf5-kcrash-devel >= 5.40.0
+BuildRequires:	kf5-kdbusaddons-devel
+BuildRequires:	kf5-kguiaddons-devel >= 5.40.0
+BuildRequires:	kf5-ki18n-devel >= 5.40.0
+BuildRequires:	kf5-kiconthemes-devel >= 5.40.0
+BuildRequires:	kf5-kio-devel >= 5.40.0
+BuildRequires:	kf5-kjobwidgets-devel >= 5.40.0
+BuildRequires:	kf5-knewstuff-devel >= 5.40.0
+BuildRequires:	kf5-kparts-devel >= 5.53.0
+BuildRequires:	kf5-ktexteditor-devel >= 5.40.0
+BuildRequires:	kf5-kwindowsystem-devel >= 5.40.0
+BuildRequires:	kf5-kxmlgui-devel >= 5.40.0
 BuildRequires:	shared-mime-info
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
