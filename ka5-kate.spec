@@ -1,4 +1,4 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kate
@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	350324ca399d5570afb5f39dbee78b0e
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	bfbaf2b94a26522583ee6ba9176a8800
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -114,6 +114,8 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/ko
+
 %find_lang %{kaname} --all-name --with-kde
 
 %clean
@@ -126,6 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kate
 %attr(755,root,root) %{_bindir}/kwrite
+%{_libdir}/qt5/plugins/ktexteditor/externaltoolsplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/katebacktracebrowserplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/katebuildplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/katecloseexceptplugin.so
@@ -143,11 +146,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/ktexteditor/katesymbolviewerplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/katexmlcheckplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/katexmltoolsplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/kterustcompletionplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/ktexteditor_lumen.so
+%{_libdir}/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
+%{_libdir}/qt5/plugins/ktexteditor/lspclientplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/tabswitcherplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/textfilterplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
 %{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_katesessions.so
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
@@ -163,7 +165,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/48x48/apps/kwrite.png
 %{_iconsdir}/hicolor/64x64/apps/kate.png
 %{_iconsdir}/hicolor/64x64/apps/kwrite.png
-%{_iconsdir}/hicolor/scalable/apps/kate.svgz
+%dir %{_iconsdir}/hicolor/150x150
+%dir %{_iconsdir}/hicolor/150x150/apps
+%{_iconsdir}/hicolor/150x150/apps/kate.png
+%dir %{_iconsdir}/hicolor/310x310
+%dir %{_iconsdir}/hicolor/310x310/apps
+%{_iconsdir}/hicolor/310x310/apps/kate.png
+%dir %{_iconsdir}/hicolor/44x44
+%dir %{_iconsdir}/hicolor/44x44/apps
+%{_iconsdir}/hicolor/44x44/apps/kate.png
+%dir %{_iconsdir}/hicolor/256x256
+%dir %{_iconsdir}/hicolor/256x256/apps
+%{_iconsdir}/hicolor/256x256/apps/kate.png
+%dir %{_iconsdir}/hicolor/512x512
+%dir %{_iconsdir}/hicolor/512x512/apps
+%{_iconsdir}/hicolor/512x512/apps/kate.png
+%{_iconsdir}/hicolor/scalable/apps/kate.svg
 %{_iconsdir}/hicolor/scalable/apps/kwrite.svgz
 %dir %{_datadir}/kateproject
 %{_datadir}/kateproject/kateproject.example
@@ -190,6 +207,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/nl/man1/kate.1*
 %{_mandir}/pt/man1/kate.1*
 %{_mandir}/pt_BR/man1/kate.1*
+%{_mandir}/ru/man1/kate.1*
 %{_mandir}/sv/man1/kate.1*
 %{_mandir}/uk/man1/kate.1*
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
