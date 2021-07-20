@@ -7,7 +7,7 @@ Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
 Version:	21.04.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -197,7 +197,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/katexmltools/xhtml1-strict.dtd.xml
 %{_datadir}/katexmltools/xhtml1-transitional.dtd.xml
 %{_datadir}/katexmltools/xslt-1.0.dtd.xml
-#%{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
 %{_datadir}/kservices5/plasma-dataengine-katesessions.desktop
 %{_mandir}/ca/man1/kate.1*
 %{_mandir}/de/man1/kate.1*
