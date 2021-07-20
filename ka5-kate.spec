@@ -197,7 +197,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/katexmltools/xhtml1-strict.dtd.xml
 %{_datadir}/katexmltools/xhtml1-transitional.dtd.xml
 %{_datadir}/katexmltools/xslt-1.0.dtd.xml
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
+#%{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
 %{_datadir}/kservices5/plasma-dataengine-katesessions.desktop
 %{_mandir}/ca/man1/kate.1*
 %{_mandir}/de/man1/kate.1*
