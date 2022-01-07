@@ -1,4 +1,4 @@
-%define		kdeappsver	21.12.0
+%define		kdeappsver	21.12.1
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kate
@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	21.12.0
+Version:	21.12.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	5e71e2452c4f433538f61cb4092c9ddd
+# Source0-md5:	93815e496364484863c2840c27de0fde
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -223,3 +223,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/services/org.kde.plasma.katesessions.operations
 %{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
+%{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
+%{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
