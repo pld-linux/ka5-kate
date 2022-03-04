@@ -1,4 +1,4 @@
-%define		kdeappsver	21.12.2
+%define		kdeappsver	21.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kate
@@ -6,12 +6,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	21.12.2
+Version:	21.12.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f82719c3f2768f1ec1dba93a7d8b84fb
+# Source0-md5:	bf1c02c26c45fe03d4be8603105413b4
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -63,15 +63,15 @@ providing more speed for minor tasks.
 %description -l pl.UTF-8
 Kate (KDE advanced text editor) to zaawansowany edytor tekstu KDE o
 możliwościach obejmujących m.in.:
-- szybkie otwieranie i edycję nawet dużych plików (otwiera plik 50MB w
-  parę sekund)
-- potężny silnik podświetlania składni, rozszerzalny za pomocą plików
-  XML
+- szybkie otwieranie i edycję nawet dużych plików (otwiera plik
+  50MB w parę sekund)
+- potężny silnik podświetlania składni, rozszerzalny za pomocą
+  plików XML
 - możliwość zwijania kodu dla C++, C, PHP i innych języków
 - dynamiczne zawijanie wierszy - długie linie są zawijane na granicy
   okna w locie dla lepszej widoczności
-- wiele widoków pozwalających oglądać więcej instancji tego samego
-  dokumentu i/lub więcej dokumentów w tym samym czasie
+- wiele widoków pozwalających oglądać więcej instancji tego
+  samego dokumentu i/lub więcej dokumentów w tym samym czasie
 - obsługę różnych kodowań globalnie i w czasie zapisu
 - wbudowaną emulację dokowalnego terminala
 - paski z listą otwartych dokumentów, przeglądarkę katalogów z
@@ -207,6 +207,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/nl/man1/kate.1*
 %{_mandir}/pt/man1/kate.1*
 %{_mandir}/pt_BR/man1/kate.1*
+%{_mandir}/ru/man1/kate.1*
 %{_mandir}/sv/man1/kate.1*
 %{_mandir}/uk/man1/kate.1*
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
