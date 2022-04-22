@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kate
@@ -9,12 +9,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	21.12.3
-Release:	2
+Version:	22.04.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bf1c02c26c45fe03d4be8603105413b4
+# Source0-md5:	9d6e95e3c1c64c2fa95e3674d1ff82ec
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -160,6 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/ktexteditor/textfilterplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/compilerexplorer.so
 %{_libdir}/qt5/plugins/ktexteditor/latexcompletionplugin.so
+%{_libdir}/qt5/plugins/ktexteditor/cmaketoolsplugin.so
 %{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_katesessions.so
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
