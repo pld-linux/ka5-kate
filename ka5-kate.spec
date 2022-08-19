@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kate
@@ -9,12 +9,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	29cc789813e8290fe8c9444173947875
+# Source0-md5:	b254a25e41d227449a17290a7fe75e17
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -192,7 +192,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_iconsdir}/hicolor/512x512/apps
 %{_iconsdir}/hicolor/512x512/apps/kate.png
 %{_iconsdir}/hicolor/scalable/apps/kate.svg
-%{_iconsdir}/hicolor/scalable/apps/kwrite.svgz
 %dir %{_datadir}/kateproject
 %{_datadir}/kateproject/kateproject.example
 %dir %{_datadir}/katexmltools
@@ -236,3 +235,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
 %{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
+%{_libdir}/libkateprivate.so.*.*.*
+%{_iconsdir}/hicolor/150x150/apps/kwrite.png
+%{_iconsdir}/hicolor/256x256/apps/kwrite.png
+%{_iconsdir}/hicolor/310x310/apps/kwrite.png
+%{_iconsdir}/hicolor/44x44/apps/kwrite.png
+%{_iconsdir}/hicolor/512x512/apps/kwrite.png
+%{_iconsdir}/hicolor/scalable/apps/kwrite.svg
