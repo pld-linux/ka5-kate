@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.08.3
+%define		kdeappsver	22.12.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kate
@@ -9,12 +9,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	22.08.3
+Version:	22.12.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	acf7efc2e6d43e99ee3c4d08e3232039
+# Source0-md5:	b42c5c910601c1b7119d908dd8fec767
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -161,7 +161,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/ktexteditor/compilerexplorer.so
 %{_libdir}/qt5/plugins/ktexteditor/latexcompletionplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/cmaketoolsplugin.so
-%{_libdir}/qt5/plugins/plasma/dataengine/plasma_engine_katesessions.so
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
 %{_iconsdir}/hicolor/128x128/apps/kate.png
@@ -207,7 +206,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/katexmltools/xhtml1-strict.dtd.xml
 %{_datadir}/katexmltools/xhtml1-transitional.dtd.xml
 %{_datadir}/katexmltools/xslt-1.0.dtd.xml
-%{_datadir}/kservices5/plasma-dataengine-katesessions.desktop
 %{_mandir}/ca/man1/kate.1*
 %{_mandir}/de/man1/kate.1*
 %{_mandir}/es/man1/kate.1*
@@ -221,20 +219,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/uk/man1/kate.1*
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
 %{_datadir}/metainfo/org.kde.kwrite.appdata.xml
-%{_datadir}/metainfo/org.kde.plasma.katesessions.appdata.xml
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents
-%dir %{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui
-%{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/KateSessionsItemDelegate.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/Menu.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/contents/ui/katesessions.qml
-%{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/metadata.desktop
-%{_datadir}/plasma/plasmoids/org.kde.plasma.katesessions/metadata.json
-%{_datadir}/plasma/services/org.kde.plasma.katesessions.operations
 %{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
 %{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
-%{_datadir}/kservices5/plasma-applet-org.kde.plasma.katesessions.desktop
 %{_libdir}/libkateprivate.so.*.*.*
 %{_iconsdir}/hicolor/150x150/apps/kwrite.png
 %{_iconsdir}/hicolor/256x256/apps/kwrite.png
@@ -242,3 +229,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/44x44/apps/kwrite.png
 %{_iconsdir}/hicolor/512x512/apps/kwrite.png
 %{_iconsdir}/hicolor/scalable/apps/kwrite.svg
+%{_libdir}/qt5/plugins/ktexteditor/keyboardmacrosplugin.so
+%{_datadir}/kconf_update/katesession_migration.upd
+%attr(755,root,root) %{_datadir}/kconf_update/migrate_kate_sessions_applet_to_kdeplasma-addons.sh
