@@ -10,7 +10,7 @@ Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
 Version:	22.12.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -124,6 +124,8 @@ rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
 rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/ko
+# not supported by glibc yet
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{kaname} --all-name --with-kde
 
