@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.12.3
+%define		kdeappsver	23.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kate
@@ -9,12 +9,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	22.12.3
-Release:	2
+Version:	23.04.0
+Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b2525e7da611b55b72bc18d064fc334c
+# Source0-md5:	f6480d3d6b15f121d851cd6c8174b76b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -139,30 +139,32 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kate
 %attr(755,root,root) %{_bindir}/kwrite
-%{_libdir}/qt5/plugins/ktexteditor/externaltoolsplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katebacktracebrowserplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katebuildplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katecloseexceptplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katectagsplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katefilebrowserplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katefiletreeplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/kategdbplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katekonsoleplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/kateprojectplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katereplicodeplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katesearchplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katesnippetsplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katesqlplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katesymbolviewerplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katexmlcheckplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/katexmltoolsplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/lspclientplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/tabswitcherplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/textfilterplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/compilerexplorer.so
-%{_libdir}/qt5/plugins/ktexteditor/latexcompletionplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/cmaketoolsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/externaltoolsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katebacktracebrowserplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katebuildplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katecloseexceptplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katectagsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katefilebrowserplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katefiletreeplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/kategdbplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katekonsoleplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/kateprojectplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katereplicodeplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katesearchplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katesnippetsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katesqlplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katesymbolviewerplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katexmlcheckplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katexmltoolsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/ktexteditorpreviewplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/lspclientplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/tabswitcherplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/textfilterplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/compilerexplorer.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/latexcompletionplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/cmaketoolsplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/eslintplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/formatplugin.so
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
 %{_iconsdir}/hicolor/128x128/apps/kate.png
@@ -221,16 +223,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/uk/man1/kate.1*
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
 %{_datadir}/metainfo/org.kde.kwrite.appdata.xml
-%{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
-%{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
-%{_libdir}/libkateprivate.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
+%attr(755,root,root) %{_libdir}/libkateprivate.so.*.*.*
 %{_iconsdir}/hicolor/150x150/apps/kwrite.png
 %{_iconsdir}/hicolor/256x256/apps/kwrite.png
 %{_iconsdir}/hicolor/310x310/apps/kwrite.png
 %{_iconsdir}/hicolor/44x44/apps/kwrite.png
 %{_iconsdir}/hicolor/512x512/apps/kwrite.png
 %{_iconsdir}/hicolor/scalable/apps/kwrite.svg
-%{_libdir}/qt5/plugins/ktexteditor/keyboardmacrosplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/keyboardmacrosplugin.so
 %{_datadir}/kconf_update/katesession_migration.upd
 %attr(755,root,root) %{_datadir}/kconf_update/migrate_kate_sessions_applet_to_kdeplasma-addons.sh
