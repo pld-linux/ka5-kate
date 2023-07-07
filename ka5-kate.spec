@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.2
+%define		kdeappsver	23.04.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kate
@@ -9,12 +9,12 @@
 Summary:	K Desktop Environment - Advanced Text Editor
 Summary(pl.UTF-8):	K Desktop Environment -  Zaawansowany edytor tekstu
 Name:		ka5-%{kaname}
-Version:	23.04.2
+Version:	23.04.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f156fea2b0836c1927ff58e3c1454706
+# Source0-md5:	270d0eff6938782ee428038944308414
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel
 BuildRequires:	Qt5DBus-devel
@@ -39,6 +39,7 @@ BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	shared-mime-info
+Requires:	%{name}-data = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -86,6 +87,18 @@ możliwościach obejmujących m.in.:
 KWrite to prosty edytor tekstu z podświetlaniem składni, zwijaniem
 kodu, dynamicznym zawijaniem wierszy itp. Jest lżejszą wersją Kate,
 szybszą dla mniejszych zadań.
+
+%package data
+Summary:	Data files for %{kaname}
+Summary(pl.UTF-8):	Dane dla %{kaname}
+Group:		X11/Applications/Editors
+BuildArch:	noarch
+
+%description data
+Data files for %{kaname}.
+
+%description data -l pl.UTF-8
+Dane dla %{kaname}.
 
 %package devel
 Summary:	kate development files
@@ -135,7 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p /sbin/ldconfig
 %postun	-p /sbin/ldconfig
 
-%files -f %{kaname}.lang
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kate
 %attr(755,root,root) %{_bindir}/kwrite
@@ -165,6 +178,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/cmaketoolsplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/eslintplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/formatplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
+%attr(755,root,root) %{_libdir}/libkateprivate.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/keyboardmacrosplugin.so
+
+%files data -f %{kaname}.lang
+%defattr(644,root,root,755)
 %{_desktopdir}/org.kde.kate.desktop
 %{_desktopdir}/org.kde.kwrite.desktop
 %{_iconsdir}/hicolor/128x128/apps/kate.png
@@ -223,16 +244,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/uk/man1/kate.1*
 %{_datadir}/metainfo/org.kde.kate.appdata.xml
 %{_datadir}/metainfo/org.kde.kwrite.appdata.xml
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/katecolorpickerplugin.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/kategitblameplugin.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/rainbowparens.so
-%attr(755,root,root) %{_libdir}/libkateprivate.so.*.*.*
 %{_iconsdir}/hicolor/150x150/apps/kwrite.png
 %{_iconsdir}/hicolor/256x256/apps/kwrite.png
 %{_iconsdir}/hicolor/310x310/apps/kwrite.png
 %{_iconsdir}/hicolor/44x44/apps/kwrite.png
 %{_iconsdir}/hicolor/512x512/apps/kwrite.png
 %{_iconsdir}/hicolor/scalable/apps/kwrite.svg
-%attr(755,root,root) %{_libdir}/qt5/plugins/ktexteditor/keyboardmacrosplugin.so
 %{_datadir}/kconf_update/katesession_migration.upd
 %attr(755,root,root) %{_datadir}/kconf_update/migrate_kate_sessions_applet_to_kdeplasma-addons.sh
